@@ -17,22 +17,17 @@ class Post{
         string $title,
         string $description,
         string $name,
-        string $body
+        string $body,
+        string $date
     ){
         $this->id =  Uuid::uuid4();
         $this->title = $title;
         $this->description = $description;
         $this->name = $name;
         $this->body = $body;
-        $this->date = "DATE";
+        $this->date = $date;
     }
 
-    public function getTitle(){
-        return $this->title;
-    }
-    public function getId(){
-        return $this->id;
-    }
     public function setConnection($connection){
         $this->connection = $connection;
     }
@@ -49,7 +44,6 @@ class Post{
         $statement->bindParam(':name',$this->name);
         $statement->bindParam(':mydate',$this->date);
         $statement->execute();
-        echo "EXECUTED";
         }
         catch(PDOexception $error){
             echo $error;

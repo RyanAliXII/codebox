@@ -19,18 +19,18 @@
 </div>
 
     <div class="form-wrapper">
-        <form>
+        <form onsubmit="submitPost(this); return false">
             <div class="input-wrapper">
             <label for="title" required>Title</label>
-            <input type="text" name="title" placeholder="Things.java, Things.js etc." required>
+            <input type="text" oninput="handleFormData(this)" name="title" placeholder="Things.java, Things.js etc." required>
             </div>
             <div class="input-wrapper">
             <label for="description">Short Description</label>
-            <input type="text" name="description" placeholder="Purpose of code. For example: Palindrome Checker."required>
+            <input type="text" oninput="handleFormData(this)" name="description" placeholder="Purpose of code. For example: Palindrome Checker."required>
         </div>
         <div class="input-wrapper">
             <label for="name">Your name or nickname</label>
-            <input type="text" name="name" placeholder="Will be used for code searching." required>
+            <input type="text" oninput="handleFormData(this)" name="name" placeholder="Will be used for code searching." required>
         </div>
         <div class="btn-wrapper">
         <button type="submit">Save Code</button>
@@ -60,5 +60,8 @@
     `
     flask.updateCode(defaultValue)
    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js"></script>
+   <script src="../scripts/create.js"></script>
 </body>
 </html>
