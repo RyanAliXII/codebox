@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda</title>
+    <link rel="stylesheet" href="../assets/stylesheets/app.css">
+</head>
+<body>
+
+<div class="code-editor-wrapper">
+<div class="code-title">
+    <span>Untitled</span>
+</div>
+<div class="code-editor">
+</div>
+</div>
+
+    <div class="form-wrapper">
+        <form>
+            <div class="input-wrapper">
+            <label for="title" required>Title</label>
+            <input type="text" name="title" placeholder="Things.java, Things.js etc." required>
+            </div>
+            <div class="input-wrapper">
+            <label for="description">Short Description</label>
+            <input type="text" name="description" placeholder="Purpose of code. For example: Palindrome Checker."required>
+        </div>
+        <div class="input-wrapper">
+            <label for="name">Your name or nickname</label>
+            <input type="text" name="name" placeholder="Will be used for code searching." required>
+        </div>
+        <div class="btn-wrapper">
+        <button type="submit">Save Code</button>
+        </div>
+        </form>
+    </div>
+    </div>
+
+
+
+   <script src="https://unpkg.com/codeflask/build/codeflask.min.js"></script>
+   <script>
+       const editor = document.querySelector('.code-editor')
+       const flask = new CodeFlask(editor, {
+           language:'js',
+        defaultTheme:false,
+        lineNumbers: true,
+        
+    });
+
+    const defaultValue = `
+        let x = 25;
+        let y = 12;
+        
+        console.log(x + y); 
+        //paste your code here and save.
+    `
+    flask.updateCode(defaultValue)
+   </script>
+</body>
+</html>

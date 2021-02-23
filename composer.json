@@ -1,0 +1,12 @@
+{
+    "authors": [
+        {
+            "name": "Ryan Ali",
+            "email": "Ryanali.developer@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.3",
+        "ramsey/uuid": "^4.1"
+    }
+}
