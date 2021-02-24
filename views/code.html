@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeBox</title>
+    <link rel="stylesheet" href="../assets/stylesheets/app.css">
+    <link rel="icon" href="../assets/images/codebox.svg"
+    <meta name="description" content="Save your code on the go  and send it with your coding buddies.">
+    <meta name="keywords" content="code box,send code text, text-editor, paste code to text online">
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <h1>CodeBox</h1>
+        </div>
+   <div class="logo-wrapper">
+    <img src="../assets/images/codebox.svg" alt="logo">
+</div>
+    </header>
+<div class="code-editor-wrapper">
+<div class="code-title">
+    
+    <div class="circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="title">
+    <span id="title-text">Untitled</span>
+</div>
+    <div class="operation">
+        <span class="copy-text copy-code" onclick="copyCode(this)">Copy code</span>
+        <span class="copy-text copy-link" onclick="copyLink(this)">Copy link</span>
+    </div>
+</div>
+<div class="code-editor">
+</div>
+</div>
+<div class="camo">
+<input id="link-input-copy" class="camo" ></input>
+<textarea id="code-input-copy" class="camo" ></textarea>
+</div>
+
+    </div>
+
+
+    <footer>
+        <span>Design and Created by Ryan Ali<span class="heart"> &#10084;</span></span>
+    </footer>
+   <script src="https://unpkg.com/codeflask/build/codeflask.min.js"></script>
+   <script>
+       const editor = document.querySelector('.code-editor')
+       const flask = new CodeFlask(editor, {
+           language:'js',
+        defaultTheme:false,
+        lineNumbers: true,
+        readonly:true
+        
+    });
+
+    const defaultValue = `
+        let x = 25;
+        let y = 12;
+        
+        console.log(x + y); 
+        //paste your code here and save.
+    `
+    flask.updateCode(defaultValue)
+   </script>
+<script src="../scripts/fetch.js"></script>
+<script>
+const code = document.querySelector('#code-input-copy')
+const link = document.querySelector('#link-input-copy')
+link.value = location.href;
+function copyCode(span){
+    code.select();
+    document.execCommand('copy')
+    span.innerText = "Code Copied"
+}
+function copyLink(span){
+    link.select()
+    document.execCommand('copy')
+    span.innerText = "Link Copied"
+}
+
+</script>
+</body>
+</html>

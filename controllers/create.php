@@ -15,14 +15,22 @@ $data = json_decode(file_get_contents("php://input"));
         $database = new Database();
         $connection = $database->getConnection();
         $post = new Post($data->title,$data->description,$data->name,$data->body,$data->date);
+        $postId = $post->getId();
         $post->setConnection($connection);
-        http_response_code(200);
+
         $post->save();
-        echo "OK";
+        http_response_code(200);
+        $response = array("status" => "OK", "postId"=>$postId);
+        echo json_encode($response);
+    }
+    else{
+        http_response_code(400);
     }
  
+    
+       
+    
    
-  
 
 
 ?>

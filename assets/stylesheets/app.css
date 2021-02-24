@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -9,12 +10,48 @@
   margin: 0 auto;
   height: 80vh;
   background:#FFFFFF;
-
   filter: drop-shadow(1px 1px 5px #efeaea);
 
 }
+.camo{
+  height:0;
+  position:absolute;
+  z-index: -1;
+  opacity: .01;
 
+}
+.circles{
+  display: flex;
+  width:25%;
+  min-width: 112px;
+  height:5vh;
+  align-items: center;
+  justify-content:center;
+  gap:1.2rem;
+  min-height: 42px;
+}
 
+.circle{
+  /* background:red; */
+  min-width: 21px;
+  width:15%;
+  height:1.3rem;
+  max-width: 21px;
+  border-radius:100%;
+
+}
+.circle:nth-child(1){
+  background:#f24f4f;
+}
+.circle:nth-child(2){
+  background:#f1c517;
+}
+.circle:nth-child(3){
+  background:#38e048;
+}
+.code-editor-wrapper{
+  margin-top: 10vh;
+}
 .form-wrapper{
   margin-top: 10vh;
   height:40vh;
@@ -22,6 +59,7 @@
 .form-wrapper form{
   width:90%;
   margin:auto;
+  max-width:700px ;
   height:30vh;
   display: flex;
   flex-direction: column;
@@ -34,27 +72,66 @@ display: block;
 .input-wrapper input{
   width:100%;
   height:2.3rem;
-  border: 1px solid #efeaea;
+  border: 1px solid #d6d4d4;
   border-radius: 5px;
   
 }
 .btn-wrapper{
-
-
   display:flex;
   justify-content: center;
 }
+.title-area{
+  width:20%;
+  height:5vh;
+}
+.loader{
+  width:100%;
+  height:100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position:fixed;
+  z-index: 20;
+  background:rgb(239, 234, 234,0.5);
+  top:0;
+}
+.hide{
+  display: none;
+}
+.title{
+  width:50%;
+  display: none;
+}
+.operation{
+ 
+  width:75%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap:1rem;
+}
+.copy-text{
+  cursor: pointer;
+  text-decoration: underline;
+  font-size:0.9rem !important;
+  
+}
+
 .btn-wrapper button{
 height:3.0rem;
 width:55%;
 cursor: pointer;
 border:none;
-border-radius: 5px;
+border-radius: 7px;
 font-size:1.2rem;
+max-width: 250px;
+background:#8500ff;
+color:#FFFFFF;
 }
 .code-title{
     height:5vh;
     width:90%;
+    display:flex;
     margin: 0 auto;
     border:1px solid #efeaea;
     text-align: center;
@@ -63,12 +140,30 @@ font-size:1.2rem;
     font-weight: 500;
     font-size:1.5rem;
     line-height:5vh;
+    min-height: 42px;
 }
-.codeflask__lines{
+.code-title span{
+ font-size:1.2rem;
+}
+input:focus{
+  outline:1px solid #8500ff;
+}
+ .codeflask__lines{
     background:#FFFFFF !important;
     display:flex;
     flex-direction:column;
     align-items:center;
+    z-index: 10 !important;
+}
+.codeflask.codeflask--has-line-numbers:before{
+  background:#FFFFFF !important;
+  z-index: 10 !important;
+}
+.codeflask__lines ::after{
+  background:#FFFFFF !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
 .codeflask {
@@ -113,5 +208,62 @@ font-size:1.2rem;
   }
   .form-wrapper{
     font-family: 'Montserrat', sans-serif;
+  }
+  header{
+    display:flex;
+    font-family: 'Montserrat', sans-serif;
+    height:10vh;
+    width:90%;
+    margin:auto;
+    gap: 1rem;
+    align-items:center;
+  }
+  .logo-wrapper img{
+    width:calc(2.5rem + 1.5vw);
+  }
+  footer{
+    height: 10vh;
+    margin-top: 5vh;
+    font-family: 'Space Mono', monospace;
+    display:flex;
+    justify-content:center;
+   background-color: #8500ff;
+   color:#FFFFFF;
+    align-items: center;
+
+  }
+  footer span{
+    font-size: calc(0.6rem + 0.5vw);
+  }
+  .heart{
+    color:red;
+  }
+  @media only screen  and (min-width: 700px){
+
+    .title{
+      display:block;
+    }
+    .operation{
+      width:25%;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      gap:1rem;
+    }
+  }
+  @media only screen  and (min-width: 800px){
+    .form-wrapper{
+      width:90%;
+      margin: auto;
+    }
+    .form-wrapper form{
+      width:90%;
+      margin:5vh 0;
+      max-width:700px;
+      height:30vh;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    } 
   }
   

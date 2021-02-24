@@ -27,9 +27,11 @@ class Post{
         $this->body = $body;
         $this->date = $date;
     }
-
     public function setConnection($connection){
         $this->connection = $connection;
+    }
+    public function getId(){
+        return $this->id;
     }
     public function save(){
 
@@ -49,8 +51,22 @@ class Post{
             echo $error;
         }
     }
-    public function find(){
-        
+    public function findById($id){
+            try{
+
+                $statement = $this->connection->prepare("SELECT  * from posts WHERE id = :id LIMIT 1");
+                $statement->bindParam(':id',$id);
+                $statement->execute();
+                $result = $statement->fetch();
+
+                return $result;
+
+            }catch(PDOException $error){
+                echo $error;
+            }
+
+            return "";
+
     }
 }
 
