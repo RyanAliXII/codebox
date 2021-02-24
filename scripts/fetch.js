@@ -1,6 +1,6 @@
 async function fetchPostById(){
     document.querySelector('#loading').className = "loader";
-    const url = 'http://project2.test/controllers/fetch.php'
+    const url = 'https://codeboxsave.herokuapp.com/controllers/fetch.php'
     const response = await fetch(url,{
         method: 'POST',
        body:JSON.stringify({id:postId}),

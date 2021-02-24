@@ -20,7 +20,7 @@ submitPost = async(form) =>{
    })
 
    document.querySelector('#loading').className = "loader";
-    const url = 'http://project2.test/controllers/create.php'
+    const url = 'https://codeboxsave.herokuapp.com/controllers/create.php'
      const response = await fetch(url,{
          method: 'POST',
         body:JSON.stringify(formData),
@@ -31,7 +31,7 @@ submitPost = async(form) =>{
  
      if(json.status === "OK"){
          console.log("REDIRECTING")
-        window.location.replace(`http://project2.test/views/code.html?postid=${json.postId}`);
+        window.location.replace(`https://codeboxsave.herokuapp.com/views/code.html?postid=${json.postId}`);
      }
      
 
