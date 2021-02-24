@@ -23,6 +23,7 @@
 .circles{
   display: flex;
   width:25%;
+  max-width:135px;
   min-width: 112px;
   height:5vh;
   align-items: center;
@@ -99,15 +100,16 @@ display: block;
   display: none;
 }
 .title{
-  width:50%;
+  width:70%;
   display: none;
 }
 .operation{
  
-  width:75%;
+  width:80%;
+  margin-right: 20px;
   display:flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap:1rem;
 }
 .copy-text{
@@ -128,6 +130,7 @@ max-width: 250px;
 background:#8500ff;
 color:#FFFFFF;
 }
+
 .code-title{
     height:5vh;
     width:90%;
@@ -216,11 +219,24 @@ input:focus{
     width:90%;
     margin:auto;
     gap: 1rem;
+    
     align-items:center;
   }
   .logo-wrapper img{
     width:calc(2.5rem + 1.5vw);
   }
+  .create-again{
+    width:90%;
+    margin:auto;
+    display:flex;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .create-again a{
+    font-weight: 600;
+    text-decoration: none;
+    font-weight:1rem;
+  }
+
   footer{
     height: 10vh;
     margin-top: 5vh;
@@ -238,16 +254,18 @@ input:focus{
   .heart{
     color:red;
   }
-  @media only screen  and (min-width: 700px){
+  @media only screen  and (min-width: 800px){
 
     .title{
       display:block;
+      width:75%;
     }
     .operation{
-      width:25%;
+      width:20%;
       display:flex;
+      min-width: 220px;
       align-items: center;
-      justify-content: center;
+      justify-content:flex-end;
       gap:1rem;
     }
   }

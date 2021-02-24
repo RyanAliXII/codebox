@@ -21,6 +21,7 @@ submitPost = async(form) =>{
 
    document.querySelector('#loading').className = "loader";
     const url = 'https://codeboxsave.herokuapp.com/controllers/create.php'
+    try{
      const response = await fetch(url,{
          method: 'POST',
         body:JSON.stringify(formData),
@@ -33,7 +34,10 @@ submitPost = async(form) =>{
          console.log("REDIRECTING")
         window.location.replace(`https://codeboxsave.herokuapp.com/views/code.html?postid=${json.postId}`);
      }
-     
+    }catch(error){
+        console.log(error);
+        document.querySelector('#loading').className = "loader hide"
+    }
 
      
 
