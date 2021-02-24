@@ -1,4 +1,5 @@
 async function fetchPostById(){
+    document.querySelector('#loading').className = "loader";
     const url = 'http://project2.test/controllers/fetch.php'
     const response = await fetch(url,{
         method: 'POST',
@@ -7,6 +8,7 @@ async function fetchPostById(){
     })
 
     let data = await response.json();
+ 
     const code = document.querySelector('#code-input-copy')
     code.value = data.body;
     if(data.status === "OK"){
@@ -27,6 +29,7 @@ async function fetchPostById(){
         `
         flask.updateCode(append + data.body);
     }
+    document.querySelector('#loading').className = "loader hide";
 }
   
   let params = (new URL(document.location)).searchParams;
