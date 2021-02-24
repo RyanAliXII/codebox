@@ -16,7 +16,7 @@ and If **Laragon** , put in the **WWW folder**.
 ## Features
 
 - **Paste Code**
--**View Pasted Code**
+- **View Pasted Code**
 - **Send Code Link**
 
 ## Resources
