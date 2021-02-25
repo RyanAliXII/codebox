@@ -28,7 +28,7 @@ async function fetchPostById() {
 //Link:${location.href}`
             flask.updateCode(
                 `${append} 
-                 ${data.body}`);
+${data.body}`);
         }
         document.querySelector('#loading').className = "loader hide";
     } catch (error) {
