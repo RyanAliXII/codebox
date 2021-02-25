@@ -21,13 +21,11 @@ async function fetchPostById() {
             document.querySelector('#title-text').innerText = title;
             const append = `
 
-        //Author : ${author}
-        //Title: ${title}
-        //Description : ${description}
-        //Date Created : ${date}
-        //Link:${location.href}
-
-        `
+ //Author : ${author}
+ //Title: ${title}
+//Description : ${description}
+ //Date Created : ${date}
+ //Link:${location.href}`
             flask.updateCode(append + data.body);
         }
         document.querySelector('#loading').className = "loader hide";
