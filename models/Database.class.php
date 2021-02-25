@@ -3,10 +3,10 @@
 
 class Database{
 
-    private $servername="localhost";
-    private $username="root";
-    private $password = "";
-    private $dbName = "quick";
+    private $servername="remotemysql.com";
+    private $username="Lt0C9j1oKd";
+    private $password = "q3yaS35KUk";
+    private $dbName = "Lt0C9j1oKd";
 
 
 

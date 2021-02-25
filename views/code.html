@@ -47,8 +47,8 @@
 </div>
 </div>
 <div class="camo">
-<input id="link-input-copy" class="camo" ></input>
-<textarea id="code-input-copy" class="camo" ></textarea>
+<input id="link-input-copy" class="camo" readonly></input>
+<textarea id="code-input-copy" class="camo" readonly></textarea>
 </div>
 
     </div>
@@ -63,17 +63,16 @@
        const flask = new CodeFlask(editor, {
            language:'js',
         defaultTheme:false,
-        lineNumbers: true,
         readonly:true
         
     });
 
     const defaultValue = `
-        let x = 25;
-        let y = 12;
+    let x = 25;
+    let y = 12;
         
-        console.log(x + y); 
-        //paste your code here and save.
+    console.log(x + y); 
+    //paste your code here and save.
     `
     flask.updateCode(defaultValue)
    </script>
@@ -85,12 +84,12 @@ link.value = location.href;
 function copyCode(span){
     code.select();
     document.execCommand('copy')
-    span.innerText = "Code Copied"
+    span.innerText = "Copied"
 }
 function copyLink(span){
     link.select()
     document.execCommand('copy')
-    span.innerText = "Link Copied"
+    span.innerText = "Copied"
 }
 
 </script>
