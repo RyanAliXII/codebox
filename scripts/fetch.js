@@ -24,9 +24,11 @@ async function fetchPostById() {
  //Author : ${author}
  //Title: ${title}
 //Description : ${description}
- //Date Created : ${date}
- //Link:${location.href}`
-            flask.updateCode(append + data.body);
+//Date Created : ${date}
+//Link:${location.href}`
+            flask.updateCode(
+                `${append} 
+                 ${data.body}`);
         }
         document.querySelector('#loading').className = "loader hide";
     } catch (error) {
