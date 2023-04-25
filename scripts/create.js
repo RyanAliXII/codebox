@@ -28,8 +28,9 @@ submitPost = async (form) => {
       headers: { "Content-type": "application/json; charset=UTF-8" },
     });
     document.querySelector("#loading").className = "loader hide";
-    let json = await response.json();
     console.log(await json.text());
+    let json = await response.json();
+
     if (json.status === "OK") {
       window.location.replace(`/views/code.html?postid=${json.postId}`);
     }
