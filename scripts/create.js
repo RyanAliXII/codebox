@@ -28,7 +28,7 @@ submitPost = async (form) => {
       headers: { "Content-type": "application/json; charset=UTF-8" },
     });
     document.querySelector("#loading").className = "loader hide";
-    console.log(await json.text());
+    console.log(await response.text());
     let json = await response.json();
 
     if (json.status === "OK") {
