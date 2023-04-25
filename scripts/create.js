@@ -29,9 +29,8 @@ submitPost = async (form) => {
     });
     document.querySelector("#loading").className = "loader hide";
     let json = await response.json();
-
+    console.log(await json.text());
     if (json.status === "OK") {
-      console.log("REDIRECTING");
       window.location.replace(`/views/code.html?postid=${json.postId}`);
     }
   } catch (error) {
