@@ -20,7 +20,7 @@ submitPost = async (form) => {
   });
 
   document.querySelector("#loading").className = "loader";
-  const url = "/codebox/controllers/create.php";
+  const url = "/controllers/create.php";
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -32,7 +32,7 @@ submitPost = async (form) => {
 
     if (json.status === "OK") {
       console.log("REDIRECTING");
-      window.location.replace(`/codebox/views/code.html?postid=${json.postId}`);
+      window.location.replace(`/views/code.html?postid=${json.postId}`);
     }
   } catch (error) {
     console.log(error);

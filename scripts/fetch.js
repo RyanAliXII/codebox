@@ -1,7 +1,7 @@
 async function fetchPostById() {
   try {
     document.querySelector("#loading").className = "loader";
-    const url = "/codebox/controllers/fetch.php";
+    const url = "/controllers/fetch.php";
     const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify({ id: postId }),
