@@ -1,19 +1,24 @@
 <?php
-
+require_once('../vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::createImmutable("../");
+$dotenv->load();
 
 class Database{
 
-    private $servername="localhost";
-    private $username="root";
-    private $password = "";
-    private $dbName = "quick";
+    private $host;
+    private $username;
+    private $password;
+    private $dbName;
 
 
 
 public function getConnection(){
     try{
-     
-        $connection = new PDO("mysql:host=$this->servername;dbname=$this->dbName;", $this->username, $this->password);
+        $this->host = $_ENV["DB_HOST"];
+        $this->username = $_ENV["DB_USER"];
+        $this->password = $_ENV["DB_PASSWORD"];
+        $this->dbName = $_ENV["DB_NAME"];
+        $connection = new PDO("mysql:host=$this->host;dbname=$this->dbName;", $this->username, $this->password);
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
        
         return $connection;

@@ -1,3 +1,6 @@
 <?php
-  header('location:/views/home.html')
+// require_once('./vendor/autoload.php');
+// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+// $dotenv->load();
+header('location:views/home.html')
 ?>

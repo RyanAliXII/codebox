@@ -1,94 +1,122 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeBox</title>
-    <link rel="stylesheet" href="../assets/stylesheets/app.css">
-    <link rel="icon" href="../assets/images/codebox.svg"
-    <meta name="description" content="Save your code on the go  and send it with your coding buddies.">
-    <meta name="keywords" content="code box,send code text, text-editor, paste code to text online">
-</head>
-<body>
+    <link rel="stylesheet" href="../assets/stylesheets/app.css" />
+    <link
+      rel="icon"
+      href="../assets/images/codebox.svg"
+      <meta
+      name="description"
+      content="Save your code on the go  and send it with your coding buddies."
+    />
+    <meta
+      name="keywords"
+      content="code box,send code text, text-editor, paste code to text online"
+    />
+  </head>
+  <body>
     <header>
-        <div class="header-title">
-            <h1>CodeBox</h1>
-        </div>
-   <div class="logo-wrapper">
-    <img src="../assets/images/codebox.svg" alt="logo">
-</div>
+      <div class="header-title">
+        <h1>CodeBox</h1>
+      </div>
+      <div class="logo-wrapper">
+        <img src="../assets/images/codebox.svg" alt="logo" />
+      </div>
     </header>
     <div class="loader hide" id="loading">
-        <img src="../assets/images/Ripple.svg">
+      <img src="../assets/images/Ripple.svg" />
     </div>
-<div class="code-editor-wrapper">
-    <div class="code-title">
+    <div class="code-editor-wrapper">
+      <div class="code-title">
         <div class="circles">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
         </div>
         <div class="title">
-            <span id="title-text">Untitled</span>
+          <span id="title-text">Untitled</span>
         </div>
+      </div>
+      <div class="code-editor"></div>
     </div>
-<div class="code-editor">
-</div>
-</div>
 
     <div class="form-wrapper">
-        <form onsubmit="submitPost(this); return false">
-            <div class="input-wrapper">
-            <label for="title" required>Title</label>
-            <input type="text" onchange="changeTitle(this)" maxlength="30" oninput="handleFormData(this)" name="title" placeholder="Things.java, Things.js etc." required>
-            </div>
-            <div class="input-wrapper">
-            <label for="description">Short Description</label>
-            <input type="text" maxLength="40" oninput="handleFormData(this)" name="description" placeholder="Purpose of code. For example: Palindrome Checker."required>
+      <form onsubmit="submitPost(this); return false">
+        <div class="input-wrapper">
+          <label for="title" required>Title</label>
+          <input
+            type="text"
+            onchange="changeTitle(this)"
+            maxlength="30"
+            oninput="handleFormData(this)"
+            name="title"
+            placeholder="Things.java, Things.js etc."
+            required
+          />
         </div>
         <div class="input-wrapper">
-            <label for="name">Your name or nickname</label>
-            <input type="text"maxLength="16" oninput="handleFormData(this)" name="name" placeholder="Will be used for code searching." required>
+          <label for="description">Short Description</label>
+          <input
+            type="text"
+            maxlength="40"
+            oninput="handleFormData(this)"
+            name="description"
+            placeholder="Purpose of code. For example: Palindrome Checker."
+            required
+          />
+        </div>
+        <div class="input-wrapper">
+          <label for="name">Your name or nickname</label>
+          <input
+            type="text"
+            maxlength="16"
+            oninput="handleFormData(this)"
+            name="name"
+            placeholder="Will be used for code searching."
+            required
+          />
         </div>
         <div class="btn-wrapper">
-        <button type="submit">Save Code</button>
+          <button type="submit">Save Code</button>
         </div>
-        </form>
-    </div>
+      </form>
     </div>
 
-<footer>
-    <span>Design and Created by Ryan Ali<span class="heart"> &#10084;</span></span>
-</footer>
-   <script src="https://unpkg.com/codeflask/build/codeflask.min.js"></script>
-   <script>
-       const editor = document.querySelector('.code-editor')
-       const flask = new CodeFlask(editor, {
-           language:'js',
-        defaultTheme:false,
-        
-    });
+    <footer>
+      <!-- <span
+        >Design and Created by Ryan Ali<span class="heart">
+          &#10084;</span
+        ></span
+      > -->
+    </footer>
+    <script src="https://unpkg.com/codeflask/build/codeflask.min.js"></script>
+    <script>
+      const editor = document.querySelector(".code-editor");
+      const flask = new CodeFlask(editor, {
+        language: "js",
+        defaultTheme: false,
+      });
 
-    const defaultValue = `
+      const defaultValue = `
     let x = 25;
     let y = 12;
     console.log(x + y); 
     //paste your code here and save.
-    `
-    flask.updateCode(defaultValue)
-   </script>
-   <script>
-        const title = document.querySelector('#title-text');
-       function changeTitle(input){
+    `;
+      flask.updateCode(defaultValue);
+    </script>
+    <script>
+      const title = document.querySelector("#title-text");
+      function changeTitle(input) {
         title.innerText = input.value;
-       }
-
-
-   </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js"></script>
-   <script src="../scripts/create.js"></script>
-</body>
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.23/moment-timezone-with-data-2012-2022.min.js"></script>
+    <script src="../scripts/create.js"></script>
+  </body>
 </html>
