@@ -1,7 +1,7 @@
 <?php
-require_once('../vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::createImmutable("../");
-$dotenv->safeLoad();
+// require_once('../vendor/autoload.php');
+// $dotenv = Dotenv\Dotenv::createImmutable("../");
+// $dotenv->safeLoad();
 
 class Database{
 
